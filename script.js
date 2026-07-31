@@ -19,14 +19,28 @@ function calculate() {
     // Tank calculations
     let totalDip = previousDip + delivery;
     let salesDip = totalDip - stock;
-    let dailyVar = litresSold - salesDip;
+    let dailyVar = salesDip - litresSold;
     let cumVar = prevVariance + dailyVar;
 
-    // Output
-    document.getElementById("totalReading").innerText = totalReading;
-    document.getElementById("litresSold").innerText = litresSold;
-    document.getElementById("totalDip").innerText = totalDip;
-    document.getElementById("salesDip").innerText = salesDip;
-    document.getElementById("dailyVar").innerText = dailyVar;
-    document.getElementById("cumVar").innerText = cumVar;
+    // Display results
+    document.getElementById("totalReading").textContent = totalReading;
+    document.getElementById("litresSold").textContent = litresSold;
+    document.getElementById("totalDip").textContent = totalDip;
+    document.getElementById("salesDip").textContent = salesDip;
+    document.getElementById("dailyVar").textContent = dailyVar;
+    document.getElementById("cumVar").textContent = cumVar;
+}
+
+function resetForm() {
+
+    // Clear all input fields
+    document.getElementById("fuelForm").reset();
+
+    // Clear results
+    document.getElementById("totalReading").textContent = "";
+    document.getElementById("litresSold").textContent = "";
+    document.getElementById("totalDip").textContent = "";
+    document.getElementById("salesDip").textContent = "";
+    document.getElementById("dailyVar").textContent = "";
+    document.getElementById("cumVar").textContent = "";
 }
